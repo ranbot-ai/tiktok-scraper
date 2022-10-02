@@ -1,8 +1,8 @@
-# Instagram scraper
+# TikTok Scraper
 
-- Get TikTok information from public webpages <Data Scraping>
+- A Nodejs script that scrapes data from TikTok profiles, to get TikTok user information from public webpages.
 
-## Technology stack
+## Technology
 
 - Node
   - Scraper running node version: 18.1.0
@@ -67,7 +67,7 @@ Starts the app in production by first building the project with `npm run build`,
 env TEST_IDS=instagram,google node build/index.js
 ```
 
-## Data Response
+## Response
 
 ```NodeJS
 // Current Page URL: https://www.tiktok.com/@google
