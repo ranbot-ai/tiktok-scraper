@@ -1,0 +1,13 @@
+# Folders
+node_modules
+build
+
+# All combined javascript files
+*.js
+
+# Environment Variables
+config/env-config.json
+cookies/*.json
+
+# Logs
+log/*.log
