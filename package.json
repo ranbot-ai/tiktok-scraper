@@ -1,7 +1,7 @@
 {
   "name": "tiktok-scraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Nodejs script that scrapes data from TikTok profiles.",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon",
@@ -13,8 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/ranbot-ai/tiktok-scraper.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "TikTok",
+    "TikTok Scraper",
+    "Data Scraper",
+    "Encore Shao",
+    "RanBOT"
+  ],
+  "author": "Encore Shao",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ranbot-ai/tiktok-scraper/issues"

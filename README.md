@@ -1,12 +1,12 @@
-# TikTok Scraper
+# TikTok Scraper | 2022
 
 - A Nodejs script that scrapes data from TikTok profiles, to get TikTok user information from public webpages.
 
 ## Technology
 
-- Node
-  - Scraper running node version: 18.1.0
+- NodeJS
   - Node Version Manager [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - Scraper running version: 18.1.0
 - [Puppeteer](https://pptr.dev/)
   - Node library which provides a high-level API to control Chrome
 - Typescript
@@ -37,7 +37,6 @@
 
 - `build`: The latest generated javascript code.
 - `config`: Deployment and proxy configuration.
-- `public`: Public resource files, no need to compile.
 - `src`: The main coding part of the scraper, written by typescript.
 - `types`: Type or Interface definition.
 
@@ -69,9 +68,8 @@ env TEST_IDS=instagram,google node build/index.js
 
 ## Response
 
-```NodeJS
-// Current Page URL: https://www.tiktok.com/@google
-// Data: {
+```json
+{
   "username": "google",
   "is_verified": true,
   "fullname": "Google",
