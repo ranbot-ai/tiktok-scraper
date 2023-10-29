@@ -16,5 +16,5 @@ export interface IIdentifier {
 
 export interface IQueueItem {
   tries: number;
-  identifier: Identifier;
+  identifier: IIdentifier;
 }
