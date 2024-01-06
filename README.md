@@ -1,4 +1,4 @@
-# TikTok Scraper | 2022
+# TikTok Scraper | 2024
 
 - A Nodejs script that scrapes data from TikTok profiles, to get TikTok user information from public webpages.
 

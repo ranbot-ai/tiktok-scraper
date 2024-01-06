@@ -1,6 +1,6 @@
-import { IQueueItem } from '../../types';
-import { humanize } from '../utils';
-import { config } from './../environment/config';
+import { IQueueItem } from "../../types";
+import { humanize } from "../utils";
+import { config } from "./../environment/config";
 import {
   usernameSelector,
   isVerifiedSelector,
@@ -10,11 +10,11 @@ import {
   followersCountSelector,
   likesCountSelector,
   userBioSelector,
-  externalUrlSelector
-} from './userTemplate';
+  externalUrlSelector,
+} from "./userTemplate";
 
 // scrape page details
-async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void>{
+async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void> {
   // Go through every item in the queue and open page in the browser
   while (queue.length > 0) {
     let queueItem: IQueueItem = queue.shift() as IQueueItem;
@@ -34,9 +34,9 @@ async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void>{
     //   request.continue();
     // });
 
-    let url = config.endpoint + '@' + identifier.identifier;
+    let url = config.endpoint + "@" + identifier.identifier;
     console.log(`// Current Page URL: ${url}`);
-    await page.goto(url, { waitUntil: 'networkidle2' });
+    await page.goto(url, { waitUntil: "networkidle2" });
 
     // await page.waitForNavigation();
 
@@ -141,4 +141,4 @@ async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void>{
   await browser.close();
 }
 
-export { scrapeTiktok }
+export { scrapeTiktok };
