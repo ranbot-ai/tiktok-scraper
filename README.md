@@ -1,4 +1,4 @@
-# TikTok Scraper | 2024
+# TikTok Scraper | 2024 May
 
 - A Nodejs script that scrapes data from TikTok profiles, to get TikTok user information from public webpages.
 
@@ -60,7 +60,7 @@ npm run start
 
 Starts the app in production by first building the project with `npm run build`, and then executing the compiled JavaScript at `build/index.js`.
 
-## Usage Examples
+## Usage Examples without HEADLESS
 
 ```NodeJS
 env TEST_IDS=instagram,google node build/index.js
@@ -79,6 +79,28 @@ env TEST_IDS=instagram,google node build/index.js
   "likes": 719400,
   "bio": "Here to help 🔍\nDo more with the Google app ⬇️",
   "external_url": "goo.gle/3DneWRb"
+}
+```
+
+## Usage Examples with HEADLESS
+
+```NodeJS
+env TEST_IDS=facebook HEADLESS=true node build/index.js
+```
+
+## Response
+
+```json
+{
+  "username": "facebook",
+  "is_verified": true,
+  "fullname": "Facebook",
+  "avatar_url": "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/c611261958ffccafd6015dea5784255f~c5_100x100.jpeg?lk3s=a5d48078&nonce=9684&refresh_token=717bc9fd9374182c1e15b475c2fd4e50&x-expires=1716638400&x-signature=sDxqgevHiFytQbaq77TDMc69zFA%3D&shp=a5d48078&shcp=81f88b70",
+  "followings": 0,
+  "followers": 330900,
+  "likes": 0,
+  "bio": "We believe people can do more together, than alone.",
+  "external_url": null
 }
 ```
 
