@@ -1,4 +1,4 @@
-# TikTok Scraper | 2024 May
+# TikTok Scraper | 2025 Activity
 
 - A Nodejs script that scrapes data from TikTok profiles, to get TikTok user information from public webpages.
 
@@ -63,7 +63,7 @@ Starts the app in production by first building the project with `npm run build`,
 ## Usage Examples without HEADLESS
 
 ```NodeJS
-env TEST_IDS=instagram,google node build/index.js
+env IDS=google node build/index.js
 ```
 
 ## Response
@@ -78,14 +78,24 @@ env TEST_IDS=instagram,google node build/index.js
   "followers": 412400,
   "likes": 719400,
   "bio": "Here to help 🔍\nDo more with the Google app ⬇️",
-  "external_url": "goo.gle/3DneWRb"
+  "external_url": "goo.gle/3DneWRb",
+  "videos": [
+    {
+      "link": "https://www.tiktok.com/@google/video/7447935899935018270",
+      "pic_url": "https://p16-pu-sign-useast8.tiktokcdn-us.com/obj/tos-useast8-p-0068-tx2/oQiqvYm1xAAEBBAAidAAZGDllhZIZEBRcGi8s?lk3s=81f88b70&x-expires=1739192400&x-signature=%2BRUTftVU7dGYo0qsaaS93ZXlWPo%3D&shp=81f88b70&shcp=-",
+      "short_description": "2024 was a year of unexpected moments, historic breakthroughs, and rising stars taking center stage. Grab your 🍿 and watch the Breakout Searches of 2024. yearinsearch.google #YearInSearch  created by Google with Google’s original sound",
+      "views_count": "2.9M",
+      "is_pinned": true
+    },
+    ....
+  ]
 }
 ```
 
 ## Usage Examples with HEADLESS
 
 ```NodeJS
-env TEST_IDS=facebook HEADLESS=true node build/index.js
+env IDS=facebook HEADLESS=true node build/index.js
 ```
 
 ## Response

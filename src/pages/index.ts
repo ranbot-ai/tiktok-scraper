@@ -11,6 +11,7 @@ import {
   likesCountSelector,
   userBioSelector,
   externalUrlSelector,
+  videosSelector,
 } from "./userTemplate";
 
 // scrape page details
@@ -132,6 +133,38 @@ async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void> {
       }
     }, externalUrlSelector);
     data.external_url = externalLink;
+
+    // videos
+    let videos = await page.evaluate((selector: string) => {
+      const allVideos = document.querySelectorAll(selector);
+
+      return Array.from(allVideos)
+        .map(function (item) {
+          let videoLink = item?.querySelector("a");
+          let videoViews = item?.querySelector(
+            "strong[data-e2e='video-views']"
+          );
+          let videoPinned = item?.querySelector(
+            "div[data-e2e='video-card-badge']"
+          );
+
+          if (videoLink instanceof HTMLElement) {
+            return {
+              link: videoLink?.href,
+              pic_url: item?.querySelector("img")?.src,
+              short_description: item?.querySelector("img")?.alt,
+              views_count: (videoViews as HTMLElement)?.innerHTML,
+              is_pinned: videoPinned?.innerHTML === "Pinned",
+            };
+          } else {
+            return {};
+          }
+        })
+        .filter(function (item) {
+          return item.link != null;
+        });
+    }, videosSelector);
+    data.videos = videos;
 
     console.log(`// Data: ${JSON.stringify(data, null, 2)}`);
 
