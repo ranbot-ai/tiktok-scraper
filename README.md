@@ -16,23 +16,30 @@
 ## Structure
 
 ```
-  build
-    └── index.js
-    └── ...
-  config
-    └── config.json
-  src
-    └── pages
-        ├── index.ts
-        ├── identifiers.ts
-        ├── userTemplate.ts
-    └── environment
-        ├── config.ts
-    └── utils
-        ├── index.ts
-    └── index.ts
-  types
-    └── index.d.ts
+➜  tiktok-scraper git:(main) tree -I 'node_modules|build'
+.
+├── README.md
+├── config
+│   └── config.json
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── environment
+│   │   └── config.ts
+│   ├── index.ts
+│   ├── pages
+│   │   ├── identifiers.ts
+│   │   ├── index.ts
+│   │   └── userTemplate.ts
+│   └── utils
+│       └── index.ts
+├── tsconfig.json
+├── types
+│   └── index.d.ts
+└── yarn.lock
+
+7 directories, 14 files
 ```
 
 - `build`: The latest generated javascript code.
@@ -87,7 +94,7 @@ env IDS=google node build/index.js
       "views_count": "2.9M",
       "is_pinned": true
     },
-    ....
+    ...
   ]
 }
 ```
@@ -116,4 +123,4 @@ env IDS=facebook HEADLESS=true node build/index.js
 
 ## Contributors
 
-- Encore
+- [Encore Shao](https://github.com/encoreshao)
