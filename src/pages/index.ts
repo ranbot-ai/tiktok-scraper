@@ -39,8 +39,6 @@ async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void> {
     console.log(`// Current Page URL: ${url}`);
     await page.goto(url, { waitUntil: "networkidle2" });
 
-    // await page.waitForNavigation();
-
     let data: any = {};
 
     // username
@@ -140,19 +138,20 @@ async function scrapeTiktok(browser: any, queue: IQueueItem[]): Promise<void> {
 
       return Array.from(allVideos)
         .map(function (item) {
-          let videoLink = item?.querySelector("a");
-          let videoViews = item?.querySelector(
+          const videoLink = item?.querySelector("a");
+          const videoViews = item?.querySelector(
             "strong[data-e2e='video-views']"
           );
-          let videoPinned = item?.querySelector(
+          const videoPinned = item?.querySelector(
             "div[data-e2e='video-card-badge']"
           );
+          const imgSrc = item?.querySelector("img");
 
           if (videoLink instanceof HTMLElement) {
             return {
               link: videoLink?.href,
-              pic_url: item?.querySelector("img")?.src,
-              short_description: item?.querySelector("img")?.alt,
+              pic_url: imgSrc?.src,
+              short_description: (imgSrc as HTMLImageElement)?.alt,
               views_count: (videoViews as HTMLElement)?.innerHTML,
               is_pinned: videoPinned?.innerHTML === "Pinned",
             };

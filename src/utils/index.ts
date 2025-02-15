@@ -34,4 +34,24 @@ const humanize = (text: any): number => {
   return parseInt(finalValue);
 };
 
-export { sleep, humanize };
+const extractExpirationDate = (url: string | undefined): any => {
+  if (!url || !url.startsWith("http")) return {};
+
+  const urlObj = new URL(url);
+  const expiresTimestamp = urlObj.searchParams.get("x-expires");
+
+  if (!expiresTimestamp) return {};
+
+  const timestamp = Number(expiresTimestamp);
+  if (isNaN(timestamp)) return {};
+
+  const date = new Date(timestamp * 1000);
+
+  return {
+    iso: date.toISOString(),
+    utc: date.toUTCString(),
+    timestamp: timestamp,
+  };
+};
+
+export { sleep, humanize, extractExpirationDate };

@@ -6,7 +6,7 @@
 
 - NodeJS
   - Node Version Manager [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-  - Scraper running version: 18.1.0
+  - Scraper running version: (v18.x, v20.x)
 - [Puppeteer](https://pptr.dev/)
   - Node library which provides a high-level API to control Chrome
 - Typescript
